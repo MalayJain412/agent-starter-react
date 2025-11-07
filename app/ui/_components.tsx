@@ -12,7 +12,6 @@ import {
   // useVoiceAssistant,
 } from '@livekit/components-react';
 import { MicrophoneIcon } from '@phosphor-icons/react/dist/ssr';
-import { useSession } from '@/components/app/session-provider';
 import { AgentControlBar } from '@/components/livekit/agent-control-bar/agent-control-bar';
 import { TrackControl } from '@/components/livekit/agent-control-bar/track-control';
 // import { TrackDeviceSelect } from '@/components/livekit/agent-control-bar/track-device-select';
@@ -46,6 +45,7 @@ import {
 } from '@/components/livekit/select';
 import { ShimmerText } from '@/components/livekit/shimmer-text';
 import { Toggle, toggleVariants } from '@/components/livekit/toggle';
+import { useConnection } from '@/hooks/useConnection';
 
 type toggleVariantsType = VariantProps<typeof toggleVariants>['variant'];
 type toggleVariantsSizeType = VariantProps<typeof toggleVariants>['size'];
@@ -61,13 +61,13 @@ type audioShaderVisualizerVariantsSizeType = VariantProps<
 >['size'];
 
 export function useMicrophone() {
-  const { startSession } = useSession();
+  const { connect } = useConnection();
   const { localParticipant } = useLocalParticipant();
 
   useEffect(() => {
-    startSession();
+    connect();
     localParticipant.setMicrophoneEnabled(true, undefined);
-  }, [startSession, localParticipant]);
+  }, [connect, localParticipant]);
 }
 
 interface ContainerProps {
