@@ -29,9 +29,9 @@ export const APP_CONFIG_DEFAULTS: AppConfig = {
   supportsScreenShare: true,
   isPreConnectBufferEnabled: true,
 
-  logo: '/lk-logo.svg',
+  logo: 'https://avatars.githubusercontent.com/u/155063571?v=4',
   accent: '#002cf2',
-  logoDark: '/lk-logo-dark.svg',
+  logoDark: 'https://avatars.githubusercontent.com/u/155063571?v=4',
   accentDark: '#1fd5f9',
   startButtonText: 'Start call',
 
