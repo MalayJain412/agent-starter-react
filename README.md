@@ -62,6 +62,7 @@ lk app create --template agent-starter-react
 Then run the app with:
 
 ```bash
+npm install -g pnpm
 pnpm install
 pnpm dev
 ```
