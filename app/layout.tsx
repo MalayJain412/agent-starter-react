@@ -61,6 +61,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         {styles && <style suppressHydrationWarning>{styles}</style>}
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        <link rel="icon" href="/favicon.png" />
         <ApplyThemeScript />
       </head>
       <body className="overflow-x-hidden">
